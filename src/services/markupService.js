@@ -8,3 +8,11 @@ export function createAllProductsMarkup(arr) {
     </li>`
     ).join("");
 }
+
+export const createNewProductMarkup = (obj)=>{
+  return `<li>
+      <h3>${obj.title}</h3>
+      <p>${obj.price}</p>
+      <p>${obj.description}</p>
+    </li>`
+}
