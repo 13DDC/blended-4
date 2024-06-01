@@ -4,6 +4,7 @@ import { getAllProducts } from './requests/products';
 import { refs } from './refs';
 import { createAllProductsMarkup } from './services/markupService';
 import { formSubmit } from './js/formSubmit';
+import { onDeleteFormSubmit } from './js/onDeleteFormSubmit';
 async function renderAllProducts() {
   try {
     const result = await getAllProducts();
@@ -16,3 +17,4 @@ async function renderAllProducts() {
 
 // renderAllProducts();
 refs.form.addEventListener('submit', formSubmit)
+refs.deletionProductForm.addEventListener('submit', onDeleteFormSubmit);
