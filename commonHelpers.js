@@ -1,0 +1,6 @@
+import{a as i}from"./assets/vendor-a2e8d7fa.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&s(n)}).observe(document,{childList:!0,subtree:!0});function c(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=c(e);fetch(e.href,t)}})();const l=i.create({baseURL:"https://dummyjson.com"});async function u(){return(await l.get("/products")).data}const a={allProducts:document.querySelector("#allProducts")};function d(o){return console.log(o),o.map(r=>`<li>
+      <h3>${r.title}</h3>
+      <p>${r.price}</p>
+      <p>${r.description}</p>
+    </li>`).join("")}async function f(){try{const o=await u(),r=d(o.products);a.allProducts.insertAdjacentHTML("beforeend",r)}catch(o){console.log(o)}}f();
+//# sourceMappingURL=commonHelpers.js.map
