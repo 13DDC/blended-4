@@ -3,6 +3,7 @@ import './styles/index.css';
 import { getAllProducts } from './requests/products';
 import { refs } from './refs';
 import { createAllProductsMarkup } from './services/markupService';
+import { formSubmit } from './js/formSubmit';
 async function renderAllProducts() {
   try {
     const result = await getAllProducts();
@@ -13,4 +14,5 @@ async function renderAllProducts() {
   }
 }
 
-renderAllProducts();
+// renderAllProducts();
+refs.form.addEventListener('submit', formSubmit)
